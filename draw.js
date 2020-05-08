@@ -23,6 +23,8 @@ function resizeW() {
     }
 }
 
+resizeW();
+
 let snake = [];
 snake[0] = {
     x : 1*box,
