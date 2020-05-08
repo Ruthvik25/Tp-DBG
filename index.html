@@ -3,22 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhawal - The snake</title>
-    <link rel="shortcut icon" href="IMG_20200425_190117.jpg" type="image/x-icon">
+    <title>Dhawal | The Snake</title>
+    <link rel="shortcut icon" href="img/mammal.png" type="image/x-icon">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-    <h1 class="h1">Dhawal's Game</h1>
-    <div class="btn">
-        <button id="reload" onclick="refresh()">New Game</button>
-    </div>
-    <br>
-    <canvas id="canvas" height="525" width="525"></canvas>
+    <nav class="nav">
+        <h1 class="h1">Dhawal Snake</h1>
+        <button id="reload">New Game</button>
+        <div class="dropdown">
+            <button class="dropbtn">Speed 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <div class="option">
+                    <input type="radio" class="radio" id="1x" name="category" value="1x" checked>
+                    <label for="1x">1x</label>
+                </div>
+        
+                <div class="option">
+                    <input type="radio" class="radio" id="2x" name="category" value="2x">
+                    <label for="2x">2x</label>
+                </div>
+        
+                <div class="option">
+                    <input type="radio" class="radio" id="4x" name="category" value="4x">
+                    <label for="4x">4x</label>
+                </div>
+        
+                <div class="option">
+                    <input type="radio" class="radio" id="8x" name="category" value="8x">
+                    <label for="8x">8x</label>
+                </div>
+
+                <div class="option">
+                    <button id="speedBtn" class="dirBtn">Done</button>
+                </div>
+            </div>
+        </div>
+    </nav>
     
+    <div class="btn">
+        <h3><span id="displaySpeed">Speed : 1x</span> &emsp; <span id="displayScore">Score : 0</span></h3>
+    </div>
+
+    <div class="wrapper">
+        <canvas id="canvas" height="525" width="525"></canvas>
+    </div>
+  
+    <div class="break"></div>
+
+    <div class="btn">
+        <button class="dirBtn" onclick="up()"> <img src="img/orientation.png"> </button>
+    </div>
+    <div class="btn">
+        <div class="float">
+            <button class="dirBtn" onclick="left()"> <img src="img/left.png"> </button>
+            <button class="dirBtn" onclick="down()"> <img src="img/down.png"> </button>
+            <button class="dirBtn" onclick="right()"> <img src="img/arrows.png"> </button>
+        </div>
+    </div>
+
+
 </body>
 
 <script src="draw.js"></script>
+<script src="fruit.js"></script>
 
 </html>
